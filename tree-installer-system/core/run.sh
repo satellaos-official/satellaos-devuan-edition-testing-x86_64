@@ -4,6 +4,7 @@ sudo apt update
 sudo apt install --no-install-recommends -y \
   alsa-utils \
   dbus-x11 \
+  dosfstools \
   gvfs \
   gvfs-backends \
   gvfs-fuse \
