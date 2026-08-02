@@ -2,14 +2,6 @@
 
 The experimental Devuan edition of SatellaOS aims to provide a freer, systemd-free world through OpenRC.
 
-> [!WARNING]
->
-> This GitHub repository is the **official testing repository** for SatellaOS Devuan Edition.
->
-> Everything in this repository may change or break at any time. **Use it at your own risk.**
->
-> If you are looking for a stable Linux experience, please download SatellaOS from the official stable repository instead.
-
 ---
 
 ## 🏛️ Architecture
@@ -38,7 +30,7 @@ SatellaOS is designed to include as little bloatware as possible. Users are **no
 
 ### ⚙️ Ecosystem
 
-SatellaOS has its own growing ecosystem. For example, it includes a graphical `SatellaOS Deb Creator` that makes creating `.Deb Packages` much easier. More tools will be added over time.
+SatellaOS has its own growing ecosystem. For example, it includes a graphical `SatellaOS Deb Creator` that makes creating `.deb Packages` much easier. More tools will be added over time.
 
 ### 🌳 Tree Installation System
 
