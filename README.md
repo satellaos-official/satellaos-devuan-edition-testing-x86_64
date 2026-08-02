@@ -175,7 +175,7 @@ This repository contains **experimental testing builds**.
 
 For the stable and recommended version of SatellaOS, please visit:
 
-**https://github.com/satellaos-official/satellaos-devuan-edition**
+**https://github.com/satellaos-official/satellaos-devuan-edition-stable-x86_64**
 
 ---
 

@@ -50,6 +50,9 @@ sudo apt install --no-install-recommends -y \
   pkexec \
   polkitd
 
+echo "Removing XFCE Polkit"
+sudo apt purge -y xfce-polkit
+
 echo "Enabling OpenRC services"
 sudo rc-update add dbus default
 sudo rc-update add lightdm default
