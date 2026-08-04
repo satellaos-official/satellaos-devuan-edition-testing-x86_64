@@ -11,6 +11,7 @@ sudo apt install --no-install-recommends -y \
   lightdm \
   lightdm-gtk-greeter \
   ntfs-3g \
+  orca \
   pavucontrol \
   pulseaudio \
   thunar \
@@ -32,6 +33,7 @@ sudo apt install --no-install-recommends -y \
   xfce4-power-manager-data \
   xfce4-power-manager-plugins \
   xfce4-pulseaudio-plugin \
+  xfce4-screensaver \
   xfce4-session \
   xfce4-settings \
   xfce4-terminal \

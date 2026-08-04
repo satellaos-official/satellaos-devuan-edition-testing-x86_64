@@ -56,29 +56,27 @@ PROGRAM_OPTIONS=(
     "40" "Mission Center (Flatpak)"           OFF
     "41" "Mousepad Text Editor (Deb)"         OFF
     "42" "OBS Studio (Flatpak)"               OFF
-    "43" "Onboard (Deb)"                      OFF
-    "44" "Orca Screen Reader (Deb)"           OFF
-    "45" "Pinta (Flatpak)"                    OFF
-    "46" "PowerISO (Flatpak)"                 OFF
-    "47" "qBittorrent (Deb)"                  OFF
-    "48" "QEMU - CLI (Deb)"                   OFF
-    "49" "QEMU - GUI (Deb)"                   OFF
-    "50" "Ristretto (Deb)"                    OFF
-    "51" "Signal (Deb)"                       OFF
-    "52" "Steam (Deb)"                        OFF
-    "53" "Sublime Text (Deb)"                 OFF
-    "54" "Telegram (Flatpak)"                 OFF
-    "55" "Thunderbird (Flatpak)"              OFF
-    "56" "Timeshift (Deb)"                    OFF
-    "57" "Unrar Free (Deb)"                   OFF
-    "58" "Unrar Non-Free (Deb)"               OFF
-    "59" "VLC Media Player (Deb)"             OFF
-    "60" "VS Code (Deb)"                      OFF
-    "61" "WineHQ Stable (Deb)"                OFF
-    "62" "Wireshark (Deb)"                    OFF
-    "63" "XFCE4 Screensaver (Deb)"            OFF
-    "64" "XFCE4 Screenshotter (Deb)"          OFF
-    "65" "XFCE4 Task Manager (Deb)"           OFF
+    "43" "Onboard Screen Keyboard (Deb)"      OFF
+    "44" "Pinta (Flatpak)"                    OFF
+    "45" "PowerISO (Flatpak)"                 OFF
+    "46" "qBittorrent (Deb)"                  OFF
+    "47" "QEMU - CLI (Deb)"                   OFF
+    "48" "QEMU - GUI (Deb)"                   OFF
+    "49" "Ristretto (Deb)"                    OFF
+    "50" "Signal (Deb)"                       OFF
+    "51" "Steam (Deb)"                        OFF
+    "52" "Sublime Text (Deb)"                 OFF
+    "53" "Telegram (Flatpak)"                 OFF
+    "54" "Thunderbird (Flatpak)"              OFF
+    "55" "Timeshift (Deb)"                    OFF
+    "56" "Unrar Free (Deb)"                   OFF
+    "57" "Unrar Non-Free (Deb)"               OFF
+    "58" "VLC Media Player (Deb)"             OFF
+    "59" "VS Code (Deb)"                      OFF
+    "60" "WineHQ Stable (Deb)"                OFF
+    "61" "Wireshark (Deb)"                    OFF
+    "62" "XFCE4 Screenshotter (Deb)"          OFF
+    "63" "XFCE4 Task Manager (Deb)"           OFF
 )
 
 declare -A PROGRAM_NAMES
@@ -456,28 +454,24 @@ install_43() { # Onboard (Deb)
     sudo apt install --no-install-recommends -y onboard
 }
 
-install_44() { # Orca Screen Reader (Deb)
-    sudo apt install --no-install-recommends -y orca
-}
-
-install_45() { # Pinta (Flatpak)
+install_44() { # Pinta (Flatpak)
     flatpak install -y --noninteractive --user flathub com.github.PintaProject.Pinta
 }
 
-install_46() { # PowerISO (Flatpak)
+install_45() { # PowerISO (Flatpak)
     flatpak install -y --noninteractive --user flathub com.poweriso.PowerISO
 }
 
-install_47() { # qBittorrent (Deb)
+install_46() { # qBittorrent (Deb)
     sudo apt install --install-recommends -y qbittorrent
 }
 
-install_48() { # QEMU - CLI (Deb)
+install_47() { # QEMU - CLI (Deb)
     sudo apt install --install-recommends -y qemu-system-x86 qemu-utils qemu-kvm
     sudo virsh net-autostart default
 }
 
-install_49() { # QEMU - GUI (Deb) — installed with virt-manager as the standard front end
+install_48() { # QEMU - GUI (Deb) — installed with virt-manager as the standard front end
     sudo apt install --install-recommends -y qemu-system-x86 qemu-utils qemu-kvm libvirt-daemon-system \
         libvirt-clients bridge-utils virt-manager
 
@@ -492,11 +486,11 @@ install_49() { # QEMU - GUI (Deb) — installed with virt-manager as the standar
     sudo virsh net-autostart default
 }
 
-install_50() { # Ristretto (Deb)
+install_49() { # Ristretto (Deb)
     sudo apt install --no-install-recommends -y ristretto libwebp7 tumbler tumbler-plugins-extra webp-pixbuf-loader
 }
 
-install_51() { # Signal (Deb)
+install_50() { # Signal (Deb)
     curl https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
     cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
 
@@ -507,43 +501,43 @@ install_51() { # Signal (Deb)
     sudo apt install --install-recommends -y signal-desktop
 }
 
-install_52() { # Steam (Deb)
+install_51() { # Steam (Deb)
     wget -O "/tmp/$project_name/temporary-files/steam.deb" "https://cdn.fastly.steamstatic.com/client/installer/steam.deb"
     sudo apt install --install-recommends -y "/tmp/$project_name/temporary-files/steam.deb"
 }
 
-install_53() { # Sublime Text (Deb)
+install_52() { # Sublime Text (Deb)
     wget -O - https://download.sublimetext.com/sublimehq-pub.gpg | sudo tee /etc/apt/keyrings/sublimehq-pub.asc > /dev/null
     echo -e 'Types: deb\nURIs: https://download.sublimetext.com/\nSuites: apt/stable/\nSigned-By: /etc/apt/keyrings/sublimehq-pub.asc' | sudo tee /etc/apt/sources.list.d/sublime-text.sources
     sudo apt update
     sudo apt install --install-recommends -y sublime-text
 }
 
-install_54() { # Telegram (Flatpak)
+install_53() { # Telegram (Flatpak)
     flatpak install -y --noninteractive --user flathub org.telegram.desktop
 }
 
-install_55() { # Thunderbird (Flatpak)
+install_54() { # Thunderbird (Flatpak)
     flatpak install -y --noninteractive --user flathub org.mozilla.thunderbird
 }
 
-install_56() { # Timeshift (Deb)
+install_55() { # Timeshift (Deb)
     sudo apt install --install-recommends -y timeshift
 }
 
-install_57() { # Unrar Free (Deb)
+install_56() { # Unrar Free (Deb)
     sudo apt install --install-recommends -y unrar-free
 }
 
-install_58() { # Unrar Non-Free (Deb)
+install_57() { # Unrar Non-Free (Deb)
     sudo apt install --install-recommends -y unrar
 }
 
-install_59() { # VLC Media Player (Deb)
+install_58() { # VLC Media Player (Deb)
     sudo apt install --install-recommends -y vlc
 }
 
-install_60() { # VS Code (Deb)
+install_59() { # VS Code (Deb)
     sudo apt install wget gpg
     wget -O- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft.gpg
 
@@ -560,7 +554,7 @@ EOF
     sudo apt install --install-recommends -y code
 }
 
-install_61() { # WineHQ Stable (Deb)
+install_60() { # WineHQ Stable (Deb)
     sudo mkdir -pm755 /etc/apt/keyrings
     wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -
 
@@ -572,19 +566,15 @@ install_61() { # WineHQ Stable (Deb)
     sudo apt install --install-recommends -y winehq-stable
 }
 
-install_62() { # Wireshark (Deb)
+install_61() { # Wireshark (Deb)
     sudo apt install --install-recommends -y wireshark
 }
 
-install_63() { # XFCE4 Screensaver (Deb)
-    sudo apt install --no-install-recommends -y xfce4-screensaver
-}
-
-install_64() { # XFCE4 Screenshotter (Deb)
+install_62() { # XFCE4 Screenshotter (Deb)
     sudo apt install --no-install-recommends -y xfce4-screenshooter
 }
 
-install_65() { # XFCE4 Task Manager (Deb)
+install_63() { # XFCE4 Task Manager (Deb)
     sudo apt install --no-install-recommends -y xfce4-taskmanager
 }
 
